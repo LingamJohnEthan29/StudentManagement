@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import StudentForm from './StudentForm';
 import { useNavigate } from 'react-router-dom';
+import './AddStudent.css'; // Importing CSS file for styles
 
 const AddStudent = () => {
   const [student, setStudent] = useState({});
@@ -9,12 +10,18 @@ const AddStudent = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:5000/students', student);
+    await axios.post('https://studentmanagement-7p47.onrender.com/students', student);
     alert("Student added!");
     navigate('/');
   };
 
-  return <StudentForm student={student} setStudent={setStudent} handleSubmit={handleSubmit} />;
+  return (
+    <div className="add-student-container">
+      <h2 className="add-student-title">Add New Student</h2>
+      <StudentForm student={student} setStudent={setStudent} handleSubmit={handleSubmit} />
+    </div>
+  );
 };
 
 export default AddStudent;
+

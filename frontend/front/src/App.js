@@ -3,18 +3,24 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import StudentList from './components/StudentList';
 import AddStudent from './components/AddStudent';
 import EditStudent from './components/EditStudent';
+import './App.css'; // 👈 Import CSS here
 
 const App = () => {
   return (
     <Router>
-      <nav>
-        <Link to="/">Home</Link> | <Link to="/add">Add Student</Link>
+      <nav className="navbar">
+        <div className="nav-container">
+          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/add" className="nav-link">Add Student</Link>
+        </div>
       </nav>
-      <Routes>
-        <Route path="/" element={<StudentList />} />
-        <Route path="/add" element={<AddStudent />} />
-        <Route path="/edit/:id" element={<EditStudent />} />
-      </Routes>
+      <div className="content">
+        <Routes>
+          <Route path="/" element={<StudentList />} />
+          <Route path="/add" element={<AddStudent />} />
+          <Route path="/edit/:id" element={<EditStudent />} />
+        </Routes>
+      </div>
     </Router>
   );
 };
