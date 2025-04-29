@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import './StudentList.css'; // 👈 Importing the CSS
+import './StudentList.css'; 
 
 const StudentList = () => {
   const [students, setStudents] = useState([]);
