@@ -32,7 +32,7 @@ const StudentList = () => {
           </tr>
         </thead>
         <tbody>
-          {students.map((s) => (
+          {students.reverse.().map((s) => (
             <tr key={s._id}>
               <td>{s.studentId}</td>
               <td>{s.firstName} {s.lastName}</td>
