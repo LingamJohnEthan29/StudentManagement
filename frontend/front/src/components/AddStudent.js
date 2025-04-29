@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import StudentForm from './StudentForm';
 import { useNavigate } from 'react-router-dom';
-import './AddStudent.css'; // Importing CSS file for styles
+import './AddStudent.css'; 
 
 const AddStudent = () => {
   const [student, setStudent] = useState({});
